@@ -38,7 +38,7 @@ def create_video(request, text):
         text_x -= dx
     video.release()
     try:
-        file = FileWrapper(open("video.mp4", "rb"))
+        file = FileWrapper(open("output.mp4", "rb"))
         response = HttpResponse(content=file,
                                 status=200,
                                 content_type="video/mp4")
