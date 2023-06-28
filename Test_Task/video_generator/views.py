@@ -31,7 +31,7 @@ def create_video(request, text):
     background = np.array([0, 255, 255] * (width * height), dtype=np.uint8)
     background = background.reshape((height, width, 3))
 
-    for i in range(fps * duration):
+    for _ in range(fps * duration):
         frame = np.array(background)
         cv.putText(frame, text, (text_x, text_y), font, font_scale, font_color, thickness, cv.LINE_AA)
         video.write(frame)
