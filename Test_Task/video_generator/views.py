@@ -9,7 +9,7 @@ import math as m
 
 @require_GET
 def create_video(request):
-    text = request.GET.get("text")
+    text = request.GET.get("text", 0)
     if not text:
         return Http404
     width = 100
