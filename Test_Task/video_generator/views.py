@@ -2,6 +2,7 @@
 from wsgiref.util import FileWrapper
 from django.http import Http404, HttpResponse, HttpResponseServerError
 from django.views.decorators.http import require_GET
+from models import Request
 import cv2 as cv
 import numpy as np
 import math as m
@@ -11,6 +12,8 @@ def create_video(request):
     text = request.GET.get("text", 0)
     if not text:
         raise Http404
+    req = Request(text=text)
+    req.save()
     width = 100
     height = 100
     size_video = (width, height)
