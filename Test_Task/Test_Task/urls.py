@@ -18,5 +18,5 @@ Including another URLconf
 from django.urls import path, include
 
 urlpatterns = [
-    path("<str:text>/", include("video_generator.urls"))
+    path("", include("video_generator.urls"))
 ]

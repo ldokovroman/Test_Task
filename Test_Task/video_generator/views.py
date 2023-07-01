@@ -8,7 +8,8 @@ import numpy as np
 import math as m
 
 @require_GET
-def create_video(request, text):
+def create_video(request):
+    text = request.GET.get("text")
     if not text:
         return Http404
     width = 100
