@@ -2,7 +2,7 @@
 from wsgiref.util import FileWrapper
 from django.http import Http404, HttpResponse, HttpResponseServerError
 from django.views.decorators.http import require_GET
-from models import Request
+from video_generator.models import Request
 import cv2 as cv
 import numpy as np
 import math as m
