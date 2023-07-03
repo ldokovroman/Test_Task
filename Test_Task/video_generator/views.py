@@ -6,7 +6,7 @@ from video_generator.models import Request
 from video_generator.src.video_creater import VideoCreater
 
 @require_GET
-def create_video(request):
+def scrolling_text(request):
     text = request.GET.get("text", 0)
     if not text:
         raise Http404
