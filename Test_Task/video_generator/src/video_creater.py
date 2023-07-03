@@ -2,6 +2,7 @@ import cv2 as cv
 import numpy as np
 import math as m
 
+
 class VideoCreater:
     width = 100
     height = 100
@@ -18,7 +19,7 @@ class VideoCreater:
 
     @classmethod
     def create_video(cls, text):
-        video = cv.VideoWriter("/videos/output.mp4", cls.fourcc, cls.fps, cls.size_video)
+        video = cv.VideoWriter(BASE_DIR + "../../../videos/output.mp4", cls.fourcc, cls.fps, cls.size_video)
         text_size = cv.getTextSize(text, cls.font, cls.font_scale, cls.thickness)[0]
         text_x = cls.width
         text_y = int((cls.height + text_size[1]) / 2)
