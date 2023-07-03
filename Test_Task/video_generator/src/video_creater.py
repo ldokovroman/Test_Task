@@ -14,6 +14,7 @@ class VideoCreater:
     font_scale = 1
     font_color = (0, 0, 255)
     thickness = 1
+    line_type = cv.LINE_AA
 
     @classmethod
     def create_video(cls, text):
@@ -28,7 +29,7 @@ class VideoCreater:
 
         for _ in range(cls.n_frames):
             frame = np.array(background)
-            cv.putText(frame, text, (text_x, text_y), font, font_scale, font_color, thickness, cv.LINE_AA)
+            cv.putText(frame, text, (text_x, text_y), cls.font, cls.font_scale, cls.font_color, cls.thickness, cls.line_type)
             video.write(frame)
             text_x -= dx
 
