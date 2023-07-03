@@ -3,7 +3,7 @@ from wsgiref.util import FileWrapper
 from django.http import Http404, HttpResponse, HttpResponseServerError
 from django.views.decorators.http import require_GET
 from video_generator.models import Request
-from src.video_creater import VideoCreater
+from video_generator.src.video_creater import VideoCreater
 
 @require_GET
 def create_video(request):
