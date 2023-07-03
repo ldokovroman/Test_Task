@@ -14,7 +14,7 @@ def create_video(request):
     req.save()
     VideoCreater.create_video(text)
     try:
-        file = FileWrapper(open("../../../videos/output.mp4", "rb"))
+        file = FileWrapper(open("../../videos/output.mp4", "rb"))
         response = HttpResponse(content=file,
                                 status=200,
                                 content_type="video/mp4")
